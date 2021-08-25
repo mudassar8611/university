@@ -1,0 +1,19 @@
+<h2 style="text-align: center;">Admin Login</h2>
+<div style="margin-left : 35%" class="row form-group">
+    <div class="col-md-5">
+        <label for="u1">Username</label><br>
+        <input  style="height: fit-content;" type="text" #u1 class="form-control"  placeholder="Username"  >
+    </div>
+</div>
+<div style="margin-left : 35%" class="row form-group">
+<div class="col-md-5">
+    <label for="p2">Password</label><br>
+    <input style="height: fit-content;" type="password"  #p2 class="form-control" placeholder="Password"   >
+    <span>{{message}}</span>
+</div>
+</div>
+<button style="margin-left : 45%" (click)= check(u1.value,p2.value) class="btn btn-primary" >Login</button>
+<br>
+
+
+    

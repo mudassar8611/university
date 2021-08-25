@@ -1,0 +1,60 @@
+<!--
+<div class="alert alert-danger" *ngIf="Error">
+    {{message}}
+</div>
+<form (ngSubmit)="onSubmit()" [formGroup]="loginForm"  autocomplete="off">
+
+    
+
+    <div class="row form-group" >
+        <div class="col-md-6">
+            <label for="username">USername:</label><br>
+            <input type="text" id="username" class="form-control"  placeholder="Your username" formControlName="username"   required >
+        </div>
+        <div class="col-md-6" >
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" class="form-control" placeholder="Your password"formControlName="password"  required >
+           
+    
+        </div>
+    </div>
+    
+   
+    
+    
+    
+    
+    
+    
+    
+    <div class="form-group">
+        <input type="submit" id="Register"  value="Login"  class="btn btn-primary">
+    </div></form>
+
+
+-->
+
+
+
+
+
+   
+
+
+  <div class="main">
+    
+   
+       
+    <p class="sign"  style="text-align: center;">Student SignIn</p>
+    <div class="alert alert-danger" *ngIf="Error">
+        {{message}}
+    </div>
+    <form class="form1" (ngSubmit)="onSubmit()" [formGroup]="loginForm"  autocomplete="off">
+      <input class="un" type="text" id="registration"   placeholder="Your Registeration Number" formControlName="registration"   required>
+      <input class="pass" type="password" id="password"  placeholder="Your password"formControlName="password"  required >
+      <input  style="text-align: center;color: black;" type="submit" id="Register"  value="Sign in"  class="btn btn-primary submit">
+     
+    </form>
+                
+   
+

@@ -1,0 +1,376 @@
+<div class="container">
+    <div class="col-md-10 col-md-offset-1 animate-box">
+        <h2>Application Form</h2>
+        
+        <form #userRegistrationForm="ngForm" (ngSubmit)="OnSubmit(userRegistrationForm)" autocomplete="off">
+    
+            
+    
+            <div class="row form-group">
+                <div class="col-md-6">
+                    <label for="First_Name">First Name:</label><br>
+                    <input type="text" id="First_Name" class="form-control"  placeholder="Your firstname" name="First_Name"  #First_Name="ngModel" [(ngModel)]="user.First_Name" required >
+                    <span class="help-bpx" *ngIf="First_Name.touched && !First_Name.valid" style="color: red;">Information Required</span>
+    
+    
+                    
+                    
+                </div>
+                <div class="col-md-6">
+                    <label for="Last_Name">Last Name:</label><br>
+                    <input type="text" id="Last_Name" class="form-control" placeholder="Your lastname" name="Last_Name"  #Last_Name="ngModel" [(ngModel)]="user.Last_Name" required >
+                    <span class="help-bpx" *ngIf="Last_Name.touched && !Last_Name.valid" style="color: red;">Information Required</span>
+    
+                </div>
+            </div>
+    
+            <div class="row form-group">
+                <div class="col-md-6">
+                    <label for="Guardian_Name">Father/Guardian Name:</label><br>
+                    <input type="text" id="Guardian_Name" class="form-control"  placeholder="Father/Guardian Name" name="Guardian_Name"  #Guardian_Name="ngModel" [(ngModel)]="user.Guardian_Name" required>
+                    <span class="help-bpx" *ngIf="Guardian_Name.touched && !Guardian_Name.valid" style="color: red;">Information Required</span>
+    
+                </div>
+                <div class="col-md-6">
+                    <label for="Guardian_Occupation">Father/Guardian Occupation:</label><br>
+                    <input type="text" id="Guardian_Occupation" class="form-control"  placeholder="Father/Guardian Occupation" name="Guardian_Occupation"  #Guardian_Occupation="ngModel" [(ngModel)]="user.Guardian_Occupation" required>
+                    <span class="help-bpx" *ngIf="Guardian_Occupation.touched && !Guardian_Occupation.valid" style="color: red;">Information Required</span>
+    
+                </div>
+            </div>
+    
+            <div class="row form-group">
+                <div class="col-md-12">
+                    <label for="Student_Number">Student Mobile No:</label><br>
+                    <input type="text" maxlength = "11" minlength="11" id="Student_Number" class="form-control"  placeholder="03XX-XXXXXXX" name="Student_Number" #Student_Number="ngModel" [(ngModel)]="user.Student_Number" required  >
+                    <span class="help-bpx" *ngIf="Student_Number.touched && !Student_Number.valid" style="color: red;">Information Required</span>
+    
+                  
+                </div>
+            </div>
+    
+            <div class="row form-group">
+                <div class="col-md-12">
+                    <label for="Guardian_Number">Father/Guardian Mobile No:</label><br>
+                    <input type="text" maxlength = "11" minlength="11" id="Guardian_Number" class="form-control" placeholder="03XX-XXXXXXX" name="Guardian_Number"  #Guardian_Number="ngModel" [(ngModel)]="user.Guardian_Number" required>
+                    <span class="help-bpx" *ngIf="Guardian_Number.touched && !Guardian_Number.valid" style="color: red;">Information Required</span>
+    
+                    
+    
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-6">
+                <label for="Programs">Programs:</label><br>
+                <select style="height: fit-content;" id="Programs" name="Programs"   class="form-control"  #Programs="ngModel"  [(ngModel)]="user.Programs" required >
+                    <span class="help-bpx" *ngIf="Programs.touched && !Programs.valid" style="color: red;">Information Required</span>
+    
+                    <option value="">-- select one --</option>
+                    <option value="FSC-Pre Medical">FSC-Pre Medical</option>
+                    <option value="FSC-Pre Engineering">FSC-Pre Engineering</option>
+                    <option value="ICS">ICS</option>
+                    <option value="ICOM">ICOM</option>
+                    <option value="FA">FA</option>
+                  </select>
+                 
+            </div>
+    
+            <div class="col-md-6">
+                <label for="Gender">Gender:</label><br>
+                <select style="height: fit-content;"  id="Gender" name="Gender"   class="form-control"  #Gender="ngModel"  [(ngModel)]="user.Gender" required >
+                    <span class="help-bpx" *ngIf="Gender.touched && !Gender.valid" style="color: red;">Information Required</span>
+    
+                    <option value="">-- select one --</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="others">others</option>
+                    
+                  </select>
+                 
+            </div>
+        </div>
+    
+        <div class="row form-group">
+            <div class="col-md-6">
+                <label for="Matric_Marks">Matric Marks:</label><br>
+                <input type="text" id="Matric_Marks" class="form-control"  placeholder="Obtained Marks/Total Marks" name="Matric_Marks" #Matric_Marks="ngModel" [(ngModel)]="user.Matric_Marks" required >
+                <span class="help-bpx" *ngIf="Matric_Marks.touched && !Matric_Marks.valid" style="color: red;">Information Required</span>
+    
+              
+                
+            </div>
+            
+        </div>
+    
+            <div class="row form-group">
+                <div class="col-md-12">
+                    <!-- <label for="email">Email</label> -->
+                    <label for="Email">Email:</label><br>
+                    <input type="email" id="Email" class="form-control"  placeholder="abc@gmail.com" name="Email"  #Email="ngModel" [(ngModel)]="user.Email" required>
+                    <span class="help-bpx" *ngIf="Email.touched && !Email.valid" style="color: red;">Information Required</span>
+    
+                    
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-12">
+                    <label for="Cnic">CNIC:</label><br>
+                    <input type="text" minlength="15" maxlength="15" id="Cnic" class="form-control"  placeholder="XXXXX-XXXXXXX-X" name="Cnic"  #Cnic="ngModel" [(ngModel)]="user.Cnic" required >
+                    <span class="help-bpx" *ngIf="Cnic.touched && !Cnic.valid" style="color: red;">Information Required</span>
+    
+                  
+    
+                </div>
+            </div>
+    
+    
+            <div class="row form-group">
+                <div class="col-md-6">
+                    <label for="Date_of_Birth">Date of Birth:</label><br>
+                <input style="height: fit-content;" type="date" id="Date_of_Birth"   class="form-control" name="Date_of_Birth"  #Date_of_Birth="ngModel" [(ngModel)]="user.Date_of_Birth" required>
+                <span class="help-bpx" *ngIf="Date_of_Birth.touched && !Date_of_Birth.valid" style="color: red;">Information Required</span>
+                </div>
+                <div class="col-md-6">
+                    <label for="Nationality">Nationality:</label><br>
+                    <select style="height: fit-content;" id="Nationality" class="form-control" name="Nationality"  #Nationality="ngModel" [(ngModel)]="user.Nationality" required>
+                        <option value="">-- select one --</option>
+                        <option value="afghan">Afghan</option>
+                        <option value="albanian">Albanian</option>
+                        <option value="algerian">Algerian</option>
+                        <option value="american">American</option>
+                        <option value="andorran">Andorran</option>
+                        <option value="angolan">Angolan</option>
+                        <option value="antiguans">Antiguans</option>
+                        <option value="argentinean">Argentinean</option>
+                        <option value="armenian">Armenian</option>
+                        <option value="australian">Australian</option>
+                        <option value="austrian">Austrian</option>
+                        <option value="azerbaijani">Azerbaijan</option>
+                        <option value="bahamian">Bahamian</option>
+                        <option value="bahraini">Bahrain</option>
+                        <option value="bangladeshi">Bangladesh</option>
+                        <option value="barbadian">Barbadian</option>
+                        <option value="barbudans">Barbudans</option>
+                        <option value="batswana">Batswana</option>
+                        <option value="belarusian">Belarusian</option>
+                        <option value="belgian">Belgian</option>
+                        <option value="belizean">Belizean</option>
+                        <option value="beninese">Beninese</option>
+                        <option value="bhutanese">Bhutanese</option>
+                        <option value="bolivian">Bolivian</option>
+                        <option value="bosnian">Bosnian</option>
+                        <option value="brazilian">Brazilian</option>
+                        <option value="british">British</option>
+                        <option value="bruneian">Bruneian</option>
+                        <option value="bulgarian">Bulgarian</option>
+                        <option value="burkinabe">Burkinabe</option>
+                        <option value="burmese">Burmese</option>
+                        <option value="burundian">Burundian</option>
+                        <option value="cambodian">Cambodian</option>
+                        <option value="cameroonian">Cameroonian</option>
+                        <option value="canadian">Canadian</option>
+                        <option value="cape verdean">Cape Verdean</option>
+                        <option value="central african">Central African</option>
+                        <option value="chadian">Chadian</option>
+                        <option value="chilean">Chilean</option>
+                        <option value="chinese">Chinese</option>
+                        <option value="colombian">Colombian</option>
+                        <option value="comoran">Comoran</option>
+                        <option value="congolese">Congolese</option>
+                        <option value="costa rican">Costa Rican</option>
+                        <option value="croatian">Croatian</option>
+                        <option value="cuban">Cuban</option>
+                        <option value="cypriot">Cypriot</option>
+                        <option value="czech">Czech</option>
+                        <option value="danish">Danish</option>
+                        <option value="djibouti">Djibout</option>
+                        <option value="dominican">Dominican</option>
+                        <option value="dutch">Dutch</option>
+                        <option value="east timorese">East Timorese</option>
+                        <option value="ecuadorean">Ecuadorean</option>
+                        <option value="egyptian">Egyptian</option>
+                        <option value="emirian">Emirian</option>
+                        <option value="equatorial guinean">Equatorial Guinean</option>
+                        <option value="eritrean">Eritrean</option>
+                        <option value="estonian">Estonian</option>
+                        <option value="ethiopian">Ethiopian</option>
+                        <option value="fijian">Fijian</option>
+                        <option value="filipino">Filipino</option>
+                        <option value="finnish">Finnish</option>
+                        <option value="french">French</option>
+                        <option value="gabonese">Gabonese</option>
+                        <option value="gambian">Gambian</option>
+                        <option value="georgian">Georgian</option>
+                        <option value="german">German</option>
+                        <option value="ghanaian">Ghanaian</option>
+                        <option value="greek">Greek</option>
+                        <option value="grenadian">Grenadian</option>
+                        <option value="guatemalan">Guatemalan</option>
+                        <option value="guinea-bissauan">Guinea-Bissauan</option>
+                        <option value="guinean">Guinean</option>
+                        <option value="guyanese">Guyanese</option>
+                        <option value="haitian">Haitian</option>
+                        <option value="herzegovinian">Herzegovinian</option>
+                        <option value="honduran">Honduran</option>
+                        <option value="hungarian">Hungarian</option>
+                        <option value="icelander">Icelander</option>
+                        <option value="indian">Indian</option>
+                        <option value="indonesian">Indonesian</option>
+                        <option value="iranian">Iranian</option>
+                        <option value="iraqi">Iraqi</option>
+                        <option value="irish">Irish</option>
+                        <option value="israeli">Israeli</option>
+                        <option value="italian">Italian</option>
+                        <option value="ivorian">Ivorian</option>
+                        <option value="jamaican">Jamaican</option>
+                        <option value="japanese">Japanese</option>
+                        <option value="jordanian">Jordanian</option>
+                        <option value="kazakhstani">Kazakhstani</option>
+                        <option value="kenyan">Kenyan</option>
+                        <option value="kittian and nevisian">Kittian and Nevisian</option>
+                        <option value="kuwaiti">Kuwait</option>
+                        <option value="kyrgyz">Kyrgyz</option>
+                        <option value="laotian">Laotian</option>
+                        <option value="latvian">Latvian</option>
+                        <option value="lebanese">Lebanese</option>
+                        <option value="liberian">Liberian</option>
+                        <option value="libyan">Libyan</option>
+                        <option value="liechtensteiner">Liechtensteiner</option>
+                        <option value="lithuanian">Lithuanian</option>
+                        <option value="luxembourger">Luxembourger</option>
+                        <option value="macedonian">Macedonian</option>
+                        <option value="malagasy">Malagasy</option>
+                        <option value="malawian">Malawian</option>
+                        <option value="malaysian">Malaysian</option>
+                        <option value="maldivan">Maldivan</option>
+                        <option value="malian">Malian</option>
+                        <option value="maltese">Maltese</option>
+                        <option value="marshallese">Marshallese</option>
+                        <option value="mauritanian">Mauritanian</option>
+                        <option value="mauritian">Mauritian</option>
+                        <option value="mexican">Mexican</option>
+                        <option value="micronesian">Micronesian</option>
+                        <option value="moldovan">Moldovan</option>
+                        <option value="monacan">Monacan</option>
+                        <option value="mongolian">Mongolian</option>
+                        <option value="moroccan">Moroccan</option>
+                        <option value="mosotho">Mosotho</option>
+                        <option value="motswana">Motswana</option>
+                        <option value="mozambican">Mozambican</option>
+                        <option value="namibian">Namibian</option>
+                        <option value="nauruan">Nauruan</option>
+                        <option value="nepalese">Nepalese</option>
+                        <option value="new zealander">New Zealander</option>
+                        <option value="ni-vanuatu">Ni-Vanuatu</option>
+                        <option value="nicaraguan">Nicaraguan</option>
+                        <option value="nigerien">Nigerien</option>
+                        <option value="north korean">North Korean</option>
+                        <option value="northern irish">Northern Irish</option>
+                        <option value="norwegian">Norwegian</option>
+                        <option value="omani">Omani</option>
+                        <option value="pakistani">Pakistan</option>
+                        <option value="palauan">Palauan</option>
+                        <option value="panamanian">Panamanian</option>
+                        <option value="papua new guinean">Papua New Guinean</option>
+                        <option value="paraguayan">Paraguayan</option>
+                        <option value="peruvian">Peruvian</option>
+                        <option value="polish">Polish</option>
+                        <option value="portuguese">Portuguese</option>
+                        <option value="qatari">Qatari</option>
+                        <option value="romanian">Romanian</option>
+                        <option value="russian">Russian</option>
+                        <option value="rwandan">Rwandan</option>
+                        <option value="saint lucian">Saint Lucian</option>
+                        <option value="salvadoran">Salvadoran</option>
+                        <option value="samoan">Samoan</option>
+                        <option value="san marinese">San Marinese</option>
+                        <option value="sao tomean">Sao Tomean</option>
+                        <option value="saudi">Saudi</option>
+                        <option value="scottish">Scottish</option>
+                        <option value="senegalese">Senegalese</option>
+                        <option value="serbian">Serbian</option>
+                        <option value="seychellois">Seychellois</option>
+                        <option value="sierra leonean">Sierra Leonean</option>
+                        <option value="singaporean">Singaporean</option>
+                        <option value="slovakian">Slovakian</option>
+                        <option value="slovenian">Slovenian</option>
+                        <option value="solomon islander">Solomon Islander</option>
+                        <option value="somali">Somali</option>
+                        <option value="south african">South African</option>
+                        <option value="south korean">South Korean</option>
+                        <option value="spanish">Spanish</option>
+                        <option value="sri lankan">Sri Lankan</option>
+                        <option value="sudanese">Sudanese</option>
+                        <option value="surinamer">Surinamer</option>
+                        <option value="swazi">Swazi</option>
+                        <option value="swedish">Swedish</option>
+                        <option value="swiss">Swiss</option>
+                        <option value="syrian">Syrian</option>
+                        <option value="taiwanese">Taiwanese</option>
+                        <option value="tajik">Tajik</option>
+                        <option value="tanzanian">Tanzanian</option>
+                        <option value="thai">Thai</option>
+                        <option value="togolese">Togolese</option>
+                        <option value="tongan">Tongan</option>
+                        <option value="trinidadian or tobagonian">Trinidadian or Tobagonian</option>
+                        <option value="tunisian">Tunisian</option>
+                        <option value="turkish">Turkish</option>
+                        <option value="tuvaluan">Tuvaluan</option>
+                        <option value="ugandan">Ugandan</option>
+                        <option value="ukrainian">Ukrainian</option>
+                        <option value="uruguayan">Uruguayan</option>
+                        <option value="uzbekistani">Uzbekistani</option>
+                        <option value="venezuelan">Venezuelan</option>
+                        <option value="vietnamese">Vietnamese</option>
+                        <option value="welsh">Welsh</option>
+                        <option value="yemenite">Yemenite</option>
+                        <option value="zambian">Zambian</option>
+                        <option value="zimbabwean">Zimbabwean</option>
+                      </select>
+                      <span class="help-bpx" *ngIf="Nationality.touched && !Nationality.valid" style="color: red;">Information Required</span>
+    
+                </div>
+            </div>
+    
+            
+    
+            <div class="row form-group">
+                <div class="col-md-12">
+                    <label for="Address">Address:</label><br>
+                    <input type="text" pattern="^[#.0-9a-zA-Z\s,-]+$" id="Address"  class="form-control" placeholder="Residential Address" name="Address" #Address="ngModel" [(ngModel)]="user.Address" required>
+                    <span class="help-bpx" *ngIf="Address.touched && !Address.valid" style="color: red;">Information Required</span>
+    
+                </div>
+            </div>
+    
+          <!--  <div class="row form-group">
+                <div class="col-md-6">
+                    <label for="fname">Upload Your Picture:</label><br>
+                    <input type="file" name="fileToUpload" id="fileToUpload"name="fileToUpload" required ngModel #fileToUpload="ngModel" >
+                    <span class="help-bpx" *ngIf="fileToUpload.touched && !fileToUpload.valid" style="color: red;">Information Required</span>
+    
+                   
+                </div>
+            </div>-->
+    
+            
+    
+    
+            
+            <div class="form-group">
+                <input type="submit" id="Register"  value="Submit" [disabled]="!userRegistrationForm.valid" class="btn btn-primary">
+            </div>
+        </form>		
+    </div>
+    </div>
+
+
+
+
+    <ngx-spinner 
+bdColor="rgba(51,51,51,0.8)"
+size="medium"
+color="#fff"
+type="ball-scale-multiple">
+<p style="font-size: 20px; color: white;">Loading.....</p>  
+</ngx-spinner>

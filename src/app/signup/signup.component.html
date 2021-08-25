@@ -1,0 +1,62 @@
+<!--<div class="container">
+    <div class="col-md-10 col-md-offset-1 animate-box">
+        <h2>User SignUp</h2>
+        
+        <form #userRegistrationForm="ngForm" (ngSubmit)="OnSubmit(userRegistrationForm)" autocomplete="off">
+    
+            
+    
+            <div class="row form-group">
+                <div class="col-md-6">
+                    <label for="username">User Name:</label><br>
+                    <input type="text" id="username" class="form-control"  placeholder="Your username" name="username"  #username="ngModel" [(ngModel)]="user.username" required >
+                    <span class="help-bpx" *ngIf="username.touched && !username.valid" style="color: red;">Information Required</span>
+    
+    
+                    
+                    
+                </div>
+                <div class="col-md-6">
+                    <label for="password">Password:</label><br>
+                    <input type="password" id="password" class="form-control" placeholder="Your password" name="password"  #password="ngModel" [(ngModel)]="user.password" required >
+                    <span class="help-bpx" *ngIf="password.touched && !password.valid" style="color: red;">Information Required</span>
+    
+                </div>
+            </div>
+    
+           
+    
+            
+    
+    
+            
+            <div class="form-group">
+                <input type="submit" id="Register"  value="SignUp" [disabled]="!userRegistrationForm.valid" class="btn btn-primary">
+            </div>
+        </form>		
+    </div>
+    </div>-->
+
+
+
+    <div class="main">
+    <p class="sign"  style="text-align: center;">Student SignUp</p>
+  
+    <form class="form1" #userRegistrationForm="ngForm" (ngSubmit)="OnSubmit(userRegistrationForm)" autocomplete="off" >
+      <input class="un" type="text" id="username"   placeholder="Your Full Name" name="username"  #username="ngModel" [(ngModel)]="user.username" required>
+      <span class="help-bpx" *ngIf="username.touched && !username.valid" style="color: red;">Information Required</span>
+
+      <input class="un" type="text" id="registration"   placeholder="Your registration Number" name="registration"  #registration="ngModel" [(ngModel)]="user.registration" required>
+      <span class="help-bpx" *ngIf="registration.touched && !registration.valid" style="color: red;">Information Required</span>
+
+      <input class="un" type="text" id="email"   placeholder="Your Email" name="email"  #email="ngModel" [(ngModel)]="user.email" required>
+      <span class="help-bpx" *ngIf="email.touched && !email.valid" style="color: red;">Information Required</span>
+
+
+      
+      <input class="pass"  type="password" id="password"   placeholder="Your password" name="password"  #password="ngModel" [(ngModel)]="user.password" required>
+      <span class="help-bpx" *ngIf="password.touched && !password.valid" style="color: red;">Information Required</span>
+
+      <input  style="text-align: center;color: black;" type="submit" id="Register"  value="Sign in"  [disabled]="!userRegistrationForm.valid" class="btn btn-primary submit">
+     
+    </form>

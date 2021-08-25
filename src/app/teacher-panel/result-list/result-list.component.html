@@ -1,0 +1,53 @@
+<div class="row form-group">
+    <div  class="col-md-4">
+        
+       
+ <input  class="fa fa-search" type="text"  class="form-control" placeholder="Search By Subject" [(ngModel)]="subject" (input)="Search()">
+</div>
+</div>
+
+
+
+<table  class="table table-hover">
+  <thead>
+    <tr>
+      <th><strong>Sr.No.</strong></th>
+      <th><strong>Semester</strong></th>
+      <th><strong>Degree</strong></th>
+      <th><strong>Subject</strong></th>
+      <th><strong>Result</strong></th>
+   
+      <th><strong>Action</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+<tr  *ngFor="let UploadResultClass of resultclass">
+  <td>{{UploadResultClass.Id}}</td>
+  <td>{{UploadResultClass.semester}}</td>
+  <td>{{UploadResultClass.degree}}</td>
+  <td>{{UploadResultClass.subject}}</td>
+  <td><button class="btn btn-link" > <a  href="{{UploadResultClass.result}}" class="fa fa-download">DownloadFile</a> </button> </td>
+  
+ <td>   <a (click)="deleteEmployee(UploadResultClass.Id)"><i class="fa fa-trash-o" style="font-size: 20px;color: crimson;cursor: pointer;"></i></a></td>
+   
+</tr>
+</tbody>
+</table>
+<br>
+  <br>
+
+  
+ 
+
+
+  <ngx-spinner 
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple">
+  <p style="font-size: 20px; color: white;">Loading.....</p>  
+  </ngx-spinner>
+  
+
+
+

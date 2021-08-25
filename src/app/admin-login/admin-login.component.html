@@ -1,0 +1,14 @@
+<div class="main">
+    
+   
+       
+    <p class="sign"  style="text-align: center;">SignIn</p>
+    <div class="alert alert-danger" *ngIf="Error">
+        {{message}}
+    </div>
+    <form class="form1" (ngSubmit)="onSubmit()" [formGroup]="loginForm"  autocomplete="off">
+      <input class="un" type="text" id="name"   placeholder="Your UserName" formControlName="FullName"   required>
+      <input class="pass" type="password" id="password"  placeholder="Your password"formControlName="Password"  required >
+      <input  style="text-align: center;color: black;" type="submit" id="Register"  value="Sign in"  class="btn btn-primary submit">
+     
+    </form>

@@ -1,0 +1,93 @@
+<aside id="colorlib-hero">
+    <div class="flexslider">
+        <ul class="slides">
+           <li style="background-image: url(assets/images/img_bg_2.jpg);">
+              
+           </li>
+          </ul>
+      </div>
+</aside>
+
+<div id="colorlib-contact">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12 col-md-offset-1 animate-box">
+                <h2>Contact Information</h2>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="contact-info-wrap-flex">
+                            <div class="con-info">
+                                <p><span><i class="icon-location-2"></i></span> 1.5 Km, Jaranwala Road, Near Al-Rehman Gate # 1 Faizpur Interchange, Lahore.</p>
+                            </div>
+                            <div class="con-info">
+                                <p><span><i class="icon-phone3"></i></span> 042-37190724<br>042-37190734<br>0316-4859263</p>
+                            </div>
+                            <div class="con-info">
+                                <p><span><i class="icon-paperplane"></i></span> <a href="mailto:lcast.institute042@gmail.com" target="_blank">lcast.institute042@gmail.com</a></p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+  <!--start of message-->
+
+
+
+
+  <div class="col-md-10 col-md-offset-1 animate-box">
+    <h2>Message Us</h2>
+    <form  [formGroup]="userRegistrationForm"   autocomplete="off">
+        <div class="row form-group">
+            <div class="col-md-6">
+                <!-- <label for="fname">First Name</label> -->
+               
+                <input type="text" id="name" class="form-control" placeholder="Your Full Name" formControlName="name"  [ngClass]="{'is-invalid': userRegistrationForm.get('name').touched && userRegistrationForm.get('name').invalid}" >
+                <div class="invalid-feedback"><div>Information is required</div></div>
+            </div>
+           
+        </div>
+
+        <div class="row form-group">
+            <div class="col-md-12">
+                <!-- <label for="email">Email</label> -->
+                <input type="text" id="email" class="form-control" placeholder="Your email address" formControlName="email" [ngClass]="{'is-invalid': userRegistrationForm.get('email').touched && userRegistrationForm.get('email').invalid}" >
+                <div class="invalid-feedback"><div>Information is required</div></div>
+            </div>
+        </div>
+
+     
+
+        <div class="row form-group">
+            <div class="col-md-12">
+                <!-- <label for="message">Message</label> -->
+                <textarea formControlName="message1" id="message1" cols="30" rows="10" class="form-control" placeholder="Say something about us" [ngClass]="{'is-invalid': userRegistrationForm.get('message1').touched && userRegistrationForm.get('message1').invalid}" ></textarea>
+                <div class="invalid-feedback"><div>Information is required</div></div>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Send Message" class="loader" (click)="OnSubmit()" [disabled]="!userRegistrationForm.valid" class="btn btn-primary">
+        </div>
+    </form>		
+</div>
+
+
+
+
+
+
+
+
+            
+        </div>
+    </div>
+</div>
+
+<ngx-spinner 
+bdColor="rgba(51,51,51,0.8)"
+size="medium"
+color="#fff"
+type="ball-scale-multiple">
+<p style="font-size: 20px; color: white;">Loading.....</p>  
+</ngx-spinner>

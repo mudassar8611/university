@@ -1,0 +1,30 @@
+<div class="row form-group">
+    <div class="col-md-4">
+        
+       
+ <input class="fa fa-search" type="text"  class="form-control" placeholder="Search By Name" [(ngModel)]="name" (input)="Search()">
+</div>
+</div>
+
+<table  class="table table-hover">
+  <thead>
+    <tr>
+      <th><strong>Name</strong></th>
+      <th><strong>Email</strong></th>
+      <th><strong>Action</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+<tr  *ngFor="let Msg of users">
+  <td>{{Msg.name}}</td>
+  <td>{{Msg.email}}</td>
+  
+  <td>
+    <a  routerLink="/message/{{Msg.id}}"><i class="fa fa-eye" style="font-size: 20px;color: crimson;cursor: pointer;"></i></a>&nbsp;
+    <a (click)="deleteEmployee(Msg.id)"><i class="fa fa-trash-o" style="font-size: 20px;color: crimson;cursor: pointer;"></i></a>&nbsp;
+   </td>
+</tr>
+</tbody>
+</table>
+<br>
+  <br>

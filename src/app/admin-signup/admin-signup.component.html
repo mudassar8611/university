@@ -1,0 +1,135 @@
+<div class="container">
+    <div class="col-md-10 col-md-offset-1 animate-box">
+        <h2>Add Candidate</h2>
+        
+        <form [formGroup]="register"  autocomplete="off">
+            <!-- FullName = model.FullName,
+            Email=model.Email,
+            Password=model.Password,
+            Phone=model.Phone,
+            City=model.City,
+            Country=model.Country,
+            RegistrationNo=model.RegistrationNo,
+            PostalCode=model.PostalCode, -->
+            
+    
+            <div class="row form-group">
+                <div class="col-md-6">
+                    <label for="FullName">Full Name: </label><br>
+                    <input type="text" class="form-control" formControlName="FullName"  placeholder="Enter FullName"  
+                    [ngClass]="{'is-invalid': register.get('FullName').touched && register.get('FullName').invalid}">
+
+                    <div class="invalid-feedback"><div>Information is required</div></div>  
+    
+                    
+                    
+                </div>
+                <div class="col-md-6">
+                    <label for="Last_Name">Email:</label><br>
+                    <input type="email" class="form-control" formControlName="Email" placeholder="Enter Email" 
+                    [ngClass]="{'is-invalid': register.get('Email').touched && register.get('Email').invalid}" >
+                    <div class="invalid-feedback"><div>Information is required</div></div>  
+    
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-6">
+                    <label for="First_Name">Password: </label><br>
+                    <input type="password" class="form-control" formControlName="Password"   placeholder="Enter Password" 
+                    [ngClass]="{'is-invalid': register.get('Password').touched && register.get('Password').invalid}" >
+
+                    <div class="invalid-feedback"><div>Information is required</div></div>  
+    
+                    
+                    
+                </div>
+                <div class="col-md-6">
+                    <label for="Last_Name">Confirm Password:</label><br>
+                    <input type="password" class="form-control" formControlName="ConfirmPassword" placeholder="Confirm Password"
+                    [ngClass]="{'is-invalid': register.get('ConfirmPassword').touched && register.get('ConfirmPassword').invalid}"  >
+                    <div class="invalid-feedback"><div>Information is required</div></div>  
+    
+                </div>
+            </div>
+    
+           
+    
+            <div class="row form-group">
+                <div class="col-md-6">
+                    <label >Phone: </label><br>
+                    <input type="number" class="form-control" formControlName="Phone"   placeholder="Enter Mobile Number" 
+                    [ngClass]="{'is-invalid': register.get('Phone').touched && register.get('Phone').invalid}" >
+                    <div class="invalid-feedback"><div>Information is required</div></div>  
+    
+    
+                    
+                    
+                </div>
+                <div class="col-md-6">
+                    <label >City:</label><br>
+                    <input type="text" class="form-control" formControlName="City" placeholder="City" 
+                    [ngClass]="{'is-invalid': register.get('City').touched && register.get('City').invalid}" >
+                
+                    <div class="invalid-feedback"><div>Information is required</div></div>  
+                </div>
+            </div>
+
+
+
+            <div class="row form-group">
+                <div class="col-md-6">
+                    <label >Country: </label><br>
+                    <input type="text" class="form-control" formControlName="Country"   placeholder="Country" 
+                    [ngClass]="{'is-invalid': register.get('Country').touched && register.get('Country').invalid}" >
+                    <div class="invalid-feedback"><div>Information is required</div></div>  
+    
+    
+                    
+                    
+                </div>
+                <div class="col-md-6">
+                    <label>Registration No:</label><br>
+                    <input type="text" class="form-control" formControlName="RegistrationNo" placeholder="Registration No." 
+                    [ngClass]="{'is-invalid': register.get('RegistrationNo').touched && register.get('RegistrationNo').invalid}" >
+                    <div class="invalid-feedback"><div>Information is required</div></div>  
+    
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-6">
+                    <label>Postal Code: </label><br>
+                    <input type="number" class="form-control"  formControlName="PostalCode"  placeholder="Postal Code" 
+                    [ngClass]="{'is-invalid': register.get('PostalCode').touched && register.get('PostalCode').invalid}" >
+
+                    <div class="invalid-feedback"><div>Information is required</div></div>  
+    
+                    
+                    
+                </div>
+               
+
+                <div class="col-md-6">
+                <label>Role</label>
+                <select class="form-control" formControlName="RoleId" 
+                [ngClass]="{'is-invalid': register.get('RoleId').touched && register.get('RoleId').invalid}">
+                    <!-- <option value="" disabled>--Select One--</option> -->
+                    <option value="admin">Admin</option>
+                    <option value="teacher">Teacher</option>
+                    <option value="student">Student</option>
+                
+                </select>
+                <div class="invalid-feedback"><div>Information is required</div></div>  
+                </div>
+
+            </div>
+    
+            
+            <div class="form-group">
+                <input type="submit"  [disabled]="!register.valid"   class="btn btn-primary">
+            </div>
+        </form>	
+      
+    
+    </div>
+    </div>
+    

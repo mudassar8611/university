@@ -1,0 +1,47 @@
+<div class="row form-group">
+    <div  class="col-md-4">
+        
+       
+ <input  class="fa fa-search" type="text"  class="form-control" placeholder="Search By First Name" [(ngModel)]="First_Name" (input)="Search()">
+</div>
+</div>
+
+<table  class="table table-hover">
+  <thead>
+    <tr>
+      <th><strong>Application_No</strong></th>
+      <th><strong>First_Name</strong></th>
+      <th><strong>Last_Name</strong></th>
+      <th><strong>Guardian_Name</strong></th>
+      <th><strong>BS_Programs</strong></th>
+      <th><strong>Status</strong></th>
+      <th><strong>Action</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+<tr  *ngFor="let User of users">
+  <td>{{User.Student_id}}</td>
+  <td>{{User.First_Name}}</td>
+  <td>{{User.Last_Name}}</td>
+  <td>{{User.Guardian_Name}}</td>
+  <td>{{User.BS_Programs}}</td>
+  <td>{{User.status}}</td>
+  <td><a routerLink="/editform/{{User.Student_id}}" ><i class="fa fa-edit" style="font-size: 20px;color:crimson;cursor: pointer;"></i></a>&nbsp;
+    <a routerLink="/view/{{User.Student_id}}"><i class="fa fa-eye" style="font-size: 20px;color: crimson;cursor: pointer;"></i></a>&nbsp;
+    <a (click)="deleteEmployee(User.Student_id)"><i class="fa fa-trash-o" style="font-size: 20px;color: crimson;cursor: pointer;"></i></a>&nbsp;
+    <a (click)="changestatus(User.Student_id)"><i class="fa fa-check" style="font-size: 20px;color:crimson;cursor: pointer;"></i></a>&nbsp;
+    <a  (click)="reject(User.Student_id)"><i class="fa fa-times" aria-hidden="true" style="font-size: 20px;color:crimson;cursor: pointer;"></i></a></td>
+</tr>
+</tbody>
+</table>
+<br>
+  <br>
+
+  
+ 
+
+
+  
+
+
+

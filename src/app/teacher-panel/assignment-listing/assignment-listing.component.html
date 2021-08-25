@@ -1,0 +1,61 @@
+<div class="row form-group">
+    <div  class="col-md-4">
+        
+       
+ <input  class="fa fa-search" type="text"  class="form-control" placeholder="Search By Subject" [(ngModel)]="subject" (input)="Search()">
+</div>
+</div>
+
+<!-- semester:string;
+  degree:string;
+  subject:string;
+  test:any; -->
+
+<table  class="table table-hover">
+  <thead>
+    <tr>
+      <th><strong>Sr.No.</strong></th>
+      <th><strong>Semester</strong></th>
+      <th><strong>Degree</strong></th>
+      <th><strong>Subject</strong></th>
+      <th><strong>Assignment</strong></th>
+      <!-- <th><strong>Status</strong></th> -->
+      <th><strong>Action</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+<tr  *ngFor="let AssignmentClass of assignment">
+  <td>{{AssignmentClass.Id}}</td>
+  <td>{{AssignmentClass.semester}}</td>
+  <td>{{AssignmentClass.degree}}</td>
+  <td>{{AssignmentClass.subject}}</td>
+  <td><button class="btn btn-link" > <a  href="{{AssignmentClass.test}}" class="fa fa-download">DownloadFile</a> </button> </td>
+  <!-- <td>{{AssignmentClass.test}}</td> -->
+  <!-- <td>{{AssignmentClass.BS_Programs}}</td>
+  <td>{{AssignmentClass.status}}</td> -->
+  <!-- <td><a routerLink="/editform/{{User.Student_id}}" ><i class="fa fa-edit" style="font-size: 20px;color:crimson;cursor: pointer;"></i></a>&nbsp;
+    <a routerLink="/view/{{User.Student_id}}"><i class="fa fa-eye" style="font-size: 20px;color: crimson;cursor: pointer;"></i></a>&nbsp; -->
+ <td>   <a (click)="deleteEmployee(AssignmentClass.Id)"><i class="fa fa-trash-o" style="font-size: 20px;color: crimson;cursor: pointer;"></i></a></td>
+    <!-- <a (click)="changestatus(User.Student_id)"><i class="fa fa-check" style="font-size: 20px;color:crimson;cursor: pointer;"></i></a>&nbsp;
+    <a  (click)="reject(User.Student_id)"><i class="fa fa-times" aria-hidden="true" style="font-size: 20px;color:crimson;cursor: pointer;"></i></a></td> -->
+</tr>
+</tbody>
+</table>
+<br>
+  <br>
+
+  
+ 
+  <ngx-spinner 
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple">
+  <p style="font-size: 20px; color: white;">Loading.....</p>  
+  </ngx-spinner>
+
+
+  
+
+
+
